@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snakes and Ladders</title> 
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+<div id="first">
+    <div id="dice" onclick="dThrow();">
+        <div id="one" class="circle">
+        </div>
+        <div id="two1" class="circle">
+        </div>
+        <div id="two2" class="circle">
+        </div>
+        <div id="four1" class="circle">
+        </div>
+        <div id="four2" class="circle">
+        </div>
+        <div id="six1" class="circle">
+        </div>
+        <div id="six2" class="circle">
+        </div>
+    </div>
+    <div id="turn" class="player"></div>
+    <div id="red" onclick="redPlay();player();"></div>
+    <div id="green" onclick="greenPlay();player();"></div>
+    <div id="yellow" onclick="yellowPlay();player();"></div>
+    <div id="blue" onclick="bluePlay();player();"></div>
+    <div id="player1" class="player"></div>
+    <div id="player2" class="player"></div>
+    <div id="player3" class="player"></div>
+    <div id="player4" class="player"></div>
+    <div id="start" onclick="start();">START</div>
+    <div id="startRed"></div>
+    <div id="startRedB"></div>
+    <div id="startGreen"></div>
+    <div id="startGreenB"></div>
+    <div id="startYellow"></div>
+    <div id="startYellowB"></div>
+    <div id="startBlue"></div>
+    <div id="startBlueB"></div>
+    <div id="winner"></div>
+
+    <div class="grid-container">
+        <div class="grid-item leftTop strong">1
+            <!-- <span class="start">start</span> -->
+        </div>
+        <div class="grid-item strong">2</div>
+        <div class="grid-item strong">3</div>
+        <div class="grid-item strong">4</div>
+        <div class="grid-item strong">5</div>
+        <div class="grid-item strong">6</div>
+        <div class="grid-item strong">7</div>
+        <div class="grid-item strong">8</div>
+        <div class="grid-item strong">9</div>
+        <div class="grid-item rightTop">10</div>
+        <div class="grid-item">20</div>
+        <div class="grid-item strong">19</div>
+        <div class="grid-item strong">18</div>
+        <div class="grid-item strong">17</div>
+        <div class="grid-item strong">16</div>
+        <div class="grid-item strong">15</div>
+        <div class="grid-item strong">14</div>
+        <div class="grid-item strong">13</div>
+        <div class="grid-item strong">12</div>
+        <div class="grid-item strong">11</div>
+        <div class="grid-item strong">21</div>
+        <div class="grid-item strong">22</div>
+        <div class="grid-item strong">23</div>
+        <div class="grid-item strong">24</div>
+        <div class="grid-item strong">25</div>
+        <div class="grid-item strong">26</div>
+        <div class="grid-item strong">27</div>
+        <div class="grid-item strong">28</div>
+        <div class="grid-item strong">29</div>
+        <div class="grid-item">30</div>
+        <div class="grid-item">40</div>
+        <div class="grid-item strong">39</div>
+        <div class="grid-item strong">38</div>
+        <div class="grid-item strong">37</div>
+        <div class="grid-item strong">36</div>
+        <div class="grid-item strong">35</div>
+        <div class="grid-item strong">34</div>
+        <div class="grid-item strong">33</div>
+        <div class="grid-item strong">32</div>
+        <div class="grid-item strong">31</div>
+        <div class="grid-item strong">41</div>
+        <div class="grid-item strong">42</div>
+        <div class="grid-item strong">43</div>
+        <div class="grid-item strong">44</div>
+        <div class="grid-item strong">45</div>
+        <div class="grid-item strong">46</div>
+        <div class="grid-item strong">47</div>
+        <div class="grid-item strong">48</div>
+        <div class="grid-item strong">49</div>
+        <div class="grid-item">50</div>
+        <div class="grid-item">60</div>
+        <div class="grid-item strong">59</div>
+        <div class="grid-item strong">58</div>
+        <div class="grid-item strong">57</div>
+        <div class="grid-item strong">56</div>
+        <div class="grid-item strong">55</div>
+        <div class="grid-item strong">54</div>
+        <div class="grid-item strong">53</div>
+        <div class="grid-item strong">52</div>
+        <div class="grid-item strong">51</div>
+        <div class="grid-item strong">61</div>
+        <div class="grid-item strong">62</div>
+        <div class="grid-item strong">63</div>
+        <div class="grid-item strong">64</div>
+        <div class="grid-item strong">65</div>
+        <div class="grid-item strong">66</div>
+        <div class="grid-item strong">67</div>
+        <div class="grid-item strong">68</div>
+        <div class="grid-item strong">69</div>
+        <div class="grid-item">70</div>
+        <div class="grid-item">80</div>
+        <div class="grid-item strong">79</div>
+        <div class="grid-item strong">78</div>
+        <div class="grid-item strong">77</div>
+        <div class="grid-item strong">76</div>
+        <div class="grid-item strong">75</div>
+        <div class="grid-item strong">74</div>
+        <div class="grid-item strong">73</div>
+        <div class="grid-item strong">72</div>
+        <div class="grid-item strong">71</div>
+        <div class="grid-item strong">81</div>
+        <div class="grid-item strong">82</div>
+        <div class="grid-item strong">83</div>
+        <div class="grid-item strong">84</div>
+        <div class="grid-item strong">85</div>
+        <div class="grid-item strong">86</div>
+        <div class="grid-item strong">87</div>
+        <div class="grid-item strong">88</div>
+        <div class="grid-item strong">89</div>
+        <div class="grid-item">90</div>
+        <div class="grid-item leftBottom">100</div>
+        <div class="grid-item">99</div>
+        <div class="grid-item">98</div>
+        <div class="grid-item">97</div>
+        <div class="grid-item">96</div>
+        <div class="grid-item">95</div>
+        <div class="grid-item">94</div>
+        <div class="grid-item">93</div>
+        <div class="grid-item">92</div>
+        <div class="grid-item rightBottom">91</div>
+    </div>
+    <div id="ladders">
+        <div class="L2to38"></div>
+        <div class="L2to38Arrow"></div>
+        <div class="L4to14"></div>
+        <div class="L4to14Arrow"></div>
+        <div class="L9to31"></div>
+        <div class="L9to31Arrow"></div>
+        <div class="L21to56"></div>
+        <div class="L21to56Arrow"></div>
+        <div class="L28to85"></div>
+        <div class="L28to85Arrow"></div>
+        <div class="L51to67"></div>
+        <div class="L51to67Arrow"></div>
+        <div class="L71to91"></div>
+        <div class="L71to91Arrow"></div>
+        <div class="L80to94"></div>
+        <div class="L80to94Arrow"></div>
+        <div class="S17to8"></div>
+        <div class="S17to8Arrow"></div>
+        <div class="S64to24"></div>
+        <div class="S64to24Arrow"></div>
+        <div class="S65to43"></div>
+        <div class="S65to43Arrow"></div>
+        <div class="S98to19"></div>
+        <div class="S98to19Arrow"></div>
+        <div class="S95to34"></div>
+        <div class="S95to34Arrow"></div>
+        <div class="S92to70"></div>
+        <div class="S92to70Arrow"></div>
+        <div class="S88to48"></div>
+        <div class="S88to48Arrow"></div>
+        <div class="S84to61"></div>
+        <div class="S84to61Arrow"></div>
+       
+    </div>
+</div>
+</body>
+
+</html>
